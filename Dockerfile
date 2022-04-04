@@ -4,17 +4,17 @@ LABEL maintainer="Roman Nikov"
 
 RUN apt update; \
     apt install -y wget; \
-    wget https://cdn.filesend.jp/private/bhQRX0BE1nJGVVR6b4GIGkqQ7gsb6DCn5YTj1vDB4AZ2jZ78whjsBCeG_ihm8HKy/vcast_m.tar.gz; \
-    tar xf vcast_m.tar.gz; \
-    cd vcast_m; \
+    wget https://cdn.filesend.jp/private/kPv_6kLosEppUybPNMShcQGg9SiHvHAljzc6509icxmAc8zyWr0mCu3MKeN2BccT/upscale.tar.gz; \
+    tar xf upscale.tar.gz; \
+    cd upscale; \
     cp config.json /usr/local/bin/config.json; \
-    cp videocast /usr/local/bin/videocast; \
+    cp upscale /usr/local/bin/upscale; \
     cd /usr/local/bin;
 
 WORKDIR /usr/local/bin
 
 RUN chmod 777 config.json;
 
-RUN chmod 777 videocast;
+RUN chmod 777 upscale;
 
-CMD videocast
+CMD upscale
